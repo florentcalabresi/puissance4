@@ -1,0 +1,41 @@
+<div class="flex dcol">
+    <div class="ui card">
+      <div class="content">
+        <div class="flex ac gap-10 jbw">
+          <div class="column">
+            <b>Code:</b> <span id="codeStreamer" class="chide">*******</span>
+          </div>
+          <div class="column">
+            <button class="ui icon button" id="copyCode" data-clipboard-text="<%= code %>">
+              <i class="copy icon"></i>
+            </button>
+            <button class="ui icon button" id="toggleCode">
+              <i class="eye slash outline icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui card loadingPlayer">
+      <div class="content">
+        <div class="flex ac gap-10">
+          <div class="ui active inline loader"></div>
+          <h3>En attente d'un autre joueur</h3>
+        </div>
+      </div>
+    </div>
+    <div class="ui card">
+      <div class="content">
+        <div class="header">Liste des joueurs</div>
+      </div>
+      <div class="content">
+        <div class="flex ac gap-10">
+          <div class="ui list" id="membersList">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="ui button" id="readyGame">Prêt</a>
+    <a class="ui button" id="quitGame">Quitter</a>
+  </div>

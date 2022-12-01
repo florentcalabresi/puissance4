@@ -1,0 +1,11 @@
+<%- include('includes/head')  %>
+  <div id="gamePlateau" class="center-layout">
+    <%- include('game_index') %>
+  </div>
+  <script>
+    const codeStreamer = '<%= code %>';
+    const roomID = '<%= roomID %>';
+    const username = '<%= username %>';
+  </script>
+  <script src="/js/party.js"></script>
+<%- include('includes/footer')  %>

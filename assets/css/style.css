@@ -1,0 +1,128 @@
+:root {
+    --background: #407F7F;
+    --primary: #0D4D4D;
+}
+body {
+    background: var(--background);
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+.center-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+.card {
+    background: var(--primary);
+    border-radius: 1rem;
+}
+.logo {
+    width: 10rem;
+    margin: 0 auto;
+}
+.text-center {
+    text-align: center;
+    color: white;
+}
+.flex {
+    display: flex !important;
+}
+.flex.dcol {
+    flex-direction: column;
+}
+.flex.gap-10 {
+    gap: 10px;
+}
+.flex.gap-20 {
+    gap: 20px;
+}
+.flex.gap-30 {
+    gap: 30px;
+}
+.flex.jc {
+    justify-content: center;
+}
+.flex.jbw {
+    justify-content: space-between;
+}
+.flex.ac {
+    align-items: center;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.w-100 {
+    width: 100% !important;
+}
+.h-100 {
+    height: 100% !important;
+    max-height: 100% !important;
+}
+.grid-plateau {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+
+    background: #3351e9;
+    border-radius: 0.5rem;
+    padding: 15px;
+}
+.grid-plateau .slot {
+    background: white;
+    min-width: 4rem;
+    min-height: 4rem;
+    border-radius: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hide {
+    display: none !important;
+}
+#gamePlateau table {
+    border: 3px #3351e9 outset;
+    background-color: #3351e9;
+    border-radius: 1rem;
+}
+#gamePlateau td {
+    width: 2cm;
+    height: 2cm;
+    margin: 0px;
+    padding: 0px;
+    border: 2px #3351e9 inset;
+    border-radius: 2cm;
+    background-color: white;
+    cursor: pointer;
+}
+#gamePlateau td.player1 {
+    background-color: red;
+}
+#gamePlateau td.player2 {
+    background-color: yellow;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

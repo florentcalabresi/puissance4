@@ -1,0 +1,65 @@
+<%- include('includes/head')  %>
+  <div class="center-layout">
+    <div class="flex dcol">
+      <div class="flex dcol gap-10 mb-10">
+        <img src="/img/icon.png" class="logo" alt="" srcset="">
+        <h2 class="text-center">Puissance 4</h2>
+      </div>
+      <% if(session === 'undefined' || session === undefined) { %>
+        <div class="ui card w-100 ">
+          <div class="content">
+            <div class="header">Authentification</div>
+          </div>
+          <div class="content">
+            <button class="ui labeled icon button authDiscord">
+              <i class="discord icon"></i>
+              Se connecter avec Discord
+            </button>
+          </div>
+        </div>
+      <% } %>
+      <% if(session !== 'undefined' && session !== undefined) { %>
+        <div class="ui cards">
+          <div class="card">
+            <div class="content">
+              <div class="header">Créer une partie</div>
+            </div>
+            <div class="content">
+              <form class="ui form" method="post" action="/game/create">
+                <input type="hidden" name="username" placeholder="Pseudo" value="<%= session?.user?.username %>">
+                <div class="field">
+                  <label>Nom de la partie</label>
+                  <input type="text" name="partyName" placeholder="Nom de partie" value="">
+                </div>
+              </div>
+              <div class="extra content">
+                <button class="ui button" type="submit">Continuer</button>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="header">Rejoindre une partie</div>
+            </div>
+            <div class="content">
+              <form class="ui form" method="post" action="/game/join">
+                <input type="hidden" name="username" placeholder="Pseudo" value="<%= session?.user?.username %>">
+                <div class="field">
+                  <label>Code de la partie</label>
+                  <input type="password" name="partyCode" placeholder="Code" value="">
+                </div>
+              </div>
+              <div class="extra content">
+                <button class="ui button" type="submit">Continuer</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  <script>
+    const sessionID = '<%= session?.user?.id+"-"+salt_sid %>';
+  </script>
+  <script src="/js/app.js"></script>
+<%- include('includes/footer')  %>
